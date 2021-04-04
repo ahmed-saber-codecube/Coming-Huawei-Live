@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/BaseCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_16dp"
+    android:layout_marginEnd="@dimen/_16dp"
+    android:layout_marginBottom="@dimen/_16dp"
+    app:cardCornerRadius="@dimen/_16dp"
+    app:cardElevation="@dimen/_2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_rounded_rect_16dp">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewDish"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_200dp"
+            android:background="@drawable/bg_rounded_top_rect_16dp"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_dish" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/shoppingBasketAnim"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewDish"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageViewDish"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/shopping_basket" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDishName"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingTop="@dimen/_8dp"
+            android:paddingEnd="@dimen/_16dp"
+            android:paddingBottom="@dimen/_8dp"
+            android:text="@string/dummy_dish_name"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/textViewDishPrice"
+            app:layout_constraintStart_toStartOf="@id/imageViewDish"
+            app:layout_constraintTop_toBottomOf="@id/imageViewDish" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDishPrice"
+            style="@style/BaseTextView.ItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingTop="@dimen/_8dp"
+            android:paddingEnd="@dimen/_16dp"
+            android:paddingBottom="@dimen/_8dp"
+            android:text="@string/dummy_price"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewDish" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/BaseTextView.ItemName"
+        android:id="@+id/textViewOutOfStock"
+        android:layout_width="@dimen/_180dp"
+        android:layout_height="@dimen/_30dp"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:background="@color/ColorOutOfStock"
+        android:gravity="center"
+        android:paddingEnd="@dimen/_10dp"
+        android:rotation="45"
+        android:textSize="@dimen/_12sp"
+        android:text="@string/label_out_of_stock"
+        android:textColor="@color/colorWhite"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</com.google.android.material.card.MaterialCardView>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/BaseCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:cardCornerRadius="@dimen/_16dp"
+        app:cardElevation="@dimen/_2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_rounded_rect_16dp">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewDish"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_200dp"
+                android:background="@drawable/bg_rounded_top_rect_16dp"
+                android:scaleType="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img_dish" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDishName"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_16dp"
+                android:paddingTop="@dimen/_8dp"
+                android:paddingEnd="@dimen/_16dp"
+                android:paddingBottom="@dimen/_8dp"
+                android:text="@string/dummy_dish_name"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/textViewDishPrice"
+                app:layout_constraintStart_toStartOf="@id/imageViewDish"
+                app:layout_constraintTop_toBottomOf="@id/imageViewDish" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDishPrice"
+                style="@style/BaseTextView.ItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_16dp"
+                android:paddingTop="@dimen/_8dp"
+                android:paddingEnd="@dimen/_16dp"
+                android:paddingBottom="@dimen/_8dp"
+                android:text="@string/dummy_price"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewDish" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_special_badges"
+                android:layout_width="@dimen/_100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-10dp"
+                android:background="@color/quantum_grey"
+                android:gravity="center"
+                android:rotation="-45"
+                android:text="Out Of Stock"
+                android:textColor="@color/colorRemove"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    -->

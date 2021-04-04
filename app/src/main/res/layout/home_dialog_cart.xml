@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_30dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonCheckout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_32dp"
+                android:text="@string/text_total"
+                android:textColor="@color/colorTotal"
+                style="@style/BaseTextView.ItemName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDiscount"
+                style="@style/BaseTextViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/textViewTotal"
+                app:layout_constraintEnd_toEndOf="@id/textViewTotal"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelTax"
+                tools:text="@string/dummy_price" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:textColor="@color/colorTotal"
+                style="@style/BaseTextViewNumber"
+                app:layout_constraintBottom_toBottomOf="@id/textViewLabelTotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelTotal"
+                tools:text="@string/dummy_price" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelDiscount"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:text="@string/label_discount"
+                app:layout_constraintBottom_toTopOf="@id/textViewLabelTotal"
+                app:layout_constraintStart_toStartOf="@id/textViewLabelTotal" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelTax"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:text="@string/text_tax"
+                app:layout_constraintBottom_toTopOf="@id/textViewLabelDiscount"
+                app:layout_constraintStart_toStartOf="@id/textViewLabelDiscount" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTax"
+                style="@style/BaseTextViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/textViewLabelTax"
+                app:layout_constraintEnd_toEndOf="@id/textViewTotal"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelTax"
+                tools:text="@string/dummy_price" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelDelivery"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:text="@string/text_delivery"
+                app:layout_constraintBottom_toTopOf="@id/textViewLabelTax"
+                app:layout_constraintStart_toStartOf="@id/textViewLabelTax" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDelivery"
+                style="@style/BaseTextViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/textViewLabelDelivery"
+                app:layout_constraintEnd_toEndOf="@id/textViewTax"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelDelivery"
+                tools:text="@string/dummy_price" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelSubtotal"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:text="@string/text_subtotal"
+                app:layout_constraintBottom_toTopOf="@id/textViewLabelDelivery"
+                app:layout_constraintStart_toStartOf="@id/textViewLabelDelivery" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSubtotal"
+                style="@style/BaseTextViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/textViewLabelSubtotal"
+                app:layout_constraintEnd_toEndOf="@id/textViewDelivery"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelSubtotal"
+                tools:text="@string/dummy_price" />
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/_16dp"
+                android:background="@color/colorSeparator"
+                app:layout_constraintBottom_toTopOf="@id/textViewLabelSubtotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_promo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16dp"
+                app:boxBackgroundMode="none"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_send"
+                app:endIconTint="@null"
+                app:hintEnabled="false"
+                android:visibility="gone"
+                android:drawablePadding="@dimen/_8dp"
+                app:layout_constraintBottom_toTopOf="@id/separator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPromoCode"
+                    style="@style/BaseEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_type_promo_code"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/_8dp"
+                    android:paddingBottom="@dimen/_8dp"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <androidx.appcompat.widget.AppCompatEditText-->
+<!--                android:id="@+id/editTextPromoCode"-->
+<!--                style="@style/BaseEditText"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/_16dp"-->
+<!--                android:drawableEnd="@drawable/ic_send"-->
+<!--                android:drawablePadding="@dimen/_8dp"-->
+<!--                android:hint="@string/hint_type_promo_code"-->
+<!--                android:imeOptions="actionDone"-->
+<!--                android:paddingTop="@dimen/_8dp"-->
+<!--                android:paddingBottom="@dimen/_8dp"-->
+<!--                android:visibility="visible"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/separator"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent" />-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelPromoCode"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:drawableStart="@drawable/ic_coupon"
+                android:drawablePadding="@dimen/_4dp"
+                android:text="@string/text_promo_code"
+                android:textColor="@color/colorTextBlue"
+                app:layout_constraintBottom_toTopOf="@id/layout_promo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_goneMarginBottom="@dimen/_16dp" />
+
+            <View
+                android:id="@+id/separator2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/_16dp"
+                android:background="@color/colorSeparator"
+                app:layout_constraintBottom_toTopOf="@id/textViewLabelPromoCode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkBoxPromoCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/bg_checkbox_dropdown"
+                android:minHeight="0dp"
+                android:paddingTop="@dimen/_10dp"
+                android:paddingBottom="@dimen/_10dp"
+                app:layout_constraintBottom_toBottomOf="@id/textViewLabelPromoCode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelPromoCode" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextNote"
+                style="@style/BaseEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:gravity="start|top"
+                android:hint="@string/hint_note"
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:maxLength="1000"
+                android:maxLines="4"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/separator2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelNote"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:text="@string/text_note"
+                android:textColor="@color/colorTextBlue"
+                app:layout_constraintBottom_toTopOf="@id/editTextNote"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_goneMarginBottom="@dimen/_16dp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkBoxNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/bg_checkbox_dropdown"
+                android:minHeight="0dp"
+                android:paddingTop="@dimen/_10dp"
+                android:paddingBottom="@dimen/_10dp"
+                app:layout_constraintBottom_toBottomOf="@id/textViewLabelNote"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelNote" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_16dp"
+                app:layout_constraintBottom_toTopOf="@id/textViewLabelNote"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0"
+                tools:itemCount="1"
+                tools:listitem="@layout/row_cart_item_variable" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_2dp"
+        android:text="@string/attention"
+        android:textColor="@color/colorGrey5"
+        android:textSize="@dimen/_12sp"
+        android:gravity="center_horizontal"
+        style="@style/BaseTextView.ItemName"
+        app:layout_constraintTop_toBottomOf="@id/nestedScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonCheckout" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCheckout"
+        style="@style/BaseButton.Cart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:drawableEnd="@drawable/ic_right"
+        android:drawablePadding="@dimen/_8dp"
+        android:paddingStart="@dimen/_8dp"
+        android:paddingEnd="@dimen/_16dp"
+        android:text="@string/text_checkout"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintStart_toEndOf="@id/buttonBack" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonBack"
+        style="@style/BaseButton.Cart.Back"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_8dp"
+        android:drawableStart="@drawable/ic_left_blue"
+        android:paddingStart="@dimen/_16dp"
+        android:paddingEnd="@dimen/_8dp"
+        android:text="@string/text_back"
+        app:layout_constraintBottom_toBottomOf="@id/buttonCheckout"
+        app:layout_constraintEnd_toStartOf="@id/buttonCheckout"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/buttonCheckout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

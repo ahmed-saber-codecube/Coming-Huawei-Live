@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_rounded_rect_top_20dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelHow"
+        style="@style/BaseTextView.ItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/text_how_was_your_last_order"
+        android:textColor="@color/colorTextGreyDark"
+        android:textSize="@dimen/_20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelStore"
+        style="@style/BaseTextView.ItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32dp"
+        android:drawableStart="@drawable/ic_store"
+        android:drawablePadding="@dimen/_8dp"
+        android:gravity="center_vertical"
+        android:text="@string/text_store"
+        android:textColor="@color/colorTextGreyDark"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelHow" />
+
+    <CheckedTextView
+        android:id="@+id/textViewTerribleStore"
+        style="@style/BaseTextView.Desc.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32dp"
+        android:checked="false"
+        android:drawableTop="@drawable/bg_checkbox_rating_terrible"
+        android:text="@string/text_terrible"
+        app:layout_constraintEnd_toStartOf="@id/textViewBadStore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelStore" />
+
+
+    <CheckedTextView
+        android:id="@+id/textViewBadStore"
+        style="@style/BaseTextView.Desc.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:drawableTop="@drawable/bg_checkbox_rating_bad"
+        android:text="@string/text_bad"
+        app:layout_constraintBottom_toBottomOf="@id/textViewTerribleStore"
+        app:layout_constraintEnd_toStartOf="@id/textViewOkayStore"
+        app:layout_constraintStart_toEndOf="@id/textViewTerribleStore"
+        app:layout_constraintTop_toTopOf="@id/textViewTerribleStore" />
+
+
+    <CheckedTextView
+        android:id="@+id/textViewOkayStore"
+        style="@style/BaseTextView.Desc.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:drawableTop="@drawable/bg_checkbox_rating_okay"
+        android:text="@string/text_okay"
+        app:layout_constraintBottom_toBottomOf="@id/textViewBadStore"
+        app:layout_constraintEnd_toStartOf="@id/textViewGoodStore"
+        app:layout_constraintStart_toEndOf="@id/textViewBadStore"
+        app:layout_constraintTop_toTopOf="@id/textViewBadStore" />
+
+    <CheckedTextView
+        android:id="@+id/textViewGoodStore"
+        style="@style/BaseTextView.Desc.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:drawableTop="@drawable/bg_checkbox_rating_good"
+        android:text="@string/text_good"
+        app:layout_constraintBottom_toBottomOf="@id/textViewOkayStore"
+        app:layout_constraintEnd_toStartOf="@id/textViewGreatStore"
+        app:layout_constraintStart_toEndOf="@id/textViewOkayStore"
+        app:layout_constraintTop_toTopOf="@id/textViewOkayStore" />
+
+
+    <CheckedTextView
+        android:id="@+id/textViewGreatStore"
+        style="@style/BaseTextView.Desc.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:drawableTop="@drawable/bg_checkbox_rating_great"
+        android:text="@string/text_great"
+        app:layout_constraintBottom_toBottomOf="@id/textViewGoodStore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textViewGoodStore"
+        app:layout_constraintTop_toTopOf="@id/textViewGoodStore" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelDriver"
+        style="@style/BaseTextView.ItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32dp"
+        android:drawableStart="@drawable/ic_scooter"
+        android:drawablePadding="@dimen/_8dp"
+        android:gravity="center_vertical"
+        android:text="@string/text_driver"
+        android:textColor="@color/colorTextGreyDark"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewOkayStore" />
+
+    <CheckedTextView
+        android:id="@+id/textViewTerribleDriver"
+        style="@style/BaseTextView.Desc.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32dp"
+        android:checked="false"
+        android:drawableTop="@drawable/bg_checkbox_rating_terrible"
+        android:text="@string/text_terrible"
+        app:layout_constraintEnd_toStartOf="@id/textViewBadDriver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelDriver" />
+
+
+    <CheckedTextView
+        android:id="@+id/textViewBadDriver"
+        style="@style/BaseTextView.Desc.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:drawableTop="@drawable/bg_checkbox_rating_bad"
+        android:text="@string/text_bad"
+        app:layout_constraintBottom_toBottomOf="@id/textViewTerribleDriver"
+        app:layout_constraintEnd_toStartOf="@id/textViewOkayDriver"
+        app:layout_constraintStart_toEndOf="@id/textViewTerribleDriver"
+        app:layout_constraintTop_toTopOf="@id/textViewTerribleDriver" />
+
+
+    <CheckedTextView
+        android:id="@+id/textViewOkayDriver"
+        style="@style/BaseTextView.Desc.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:drawableTop="@drawable/bg_checkbox_rating_okay"
+        android:text="@string/text_okay"
+        app:layout_constraintBottom_toBottomOf="@id/textViewBadDriver"
+        app:layout_constraintEnd_toStartOf="@id/textViewGoodDriver"
+        app:layout_constraintStart_toEndOf="@id/textViewBadDriver"
+        app:layout_constraintTop_toTopOf="@id/textViewBadDriver" />
+
+    <CheckedTextView
+        android:id="@+id/textViewGoodDriver"
+        style="@style/BaseTextView.Desc.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:drawableTop="@drawable/bg_checkbox_rating_good"
+        android:text="@string/text_good"
+        app:layout_constraintBottom_toBottomOf="@id/textViewOkayDriver"
+        app:layout_constraintEnd_toStartOf="@id/textViewGreatDriver"
+        app:layout_constraintStart_toEndOf="@id/textViewOkayDriver"
+        app:layout_constraintTop_toTopOf="@id/textViewOkayDriver" />
+
+
+    <CheckedTextView
+        android:id="@+id/textViewGreatDriver"
+        style="@style/BaseTextView.Desc.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:drawableTop="@drawable/bg_checkbox_rating_great"
+        android:text="@string/text_great"
+        app:layout_constraintBottom_toBottomOf="@id/textViewGoodDriver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textViewGoodDriver"
+        app:layout_constraintTop_toTopOf="@id/textViewGoodDriver" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDone"
+        style="@style/BaseButton.Cart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8dp"
+        android:layout_marginTop="@dimen/_32dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_16dp"
+        android:text="@string/text_done"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonCancel"
+        app:layout_constraintTop_toBottomOf="@id/textViewGreatDriver" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCancel"
+        style="@style/BaseButton.Cart.Back"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_8dp"
+        android:text="@string/label_cancel"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintBottom_toBottomOf="@id/buttonDone"
+        app:layout_constraintEnd_toStartOf="@id/buttonDone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/buttonDone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

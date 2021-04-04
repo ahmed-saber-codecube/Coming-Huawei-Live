@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_16dp"
+    android:layout_marginTop="@dimen/_8dp"
+    android:layout_marginEnd="@dimen/_16dp"
+    android:background="@drawable/bg_rounded_rect_16dp"
+    android:focusable="true"
+    android:clickable="true"
+    app:cardCornerRadius="@dimen/_15dp"
+    android:elevation="@dimen/_5dp"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <!--android:background="@drawable/bg_rounded_rect_10dp"-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewProviderLogo"
+        android:layout_width="@dimen/_80dp"
+        android:layout_height="@dimen/_80dp"
+        android:layout_margin="@dimen/_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:srcCompat="@drawable/img_provider_logo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewProviderName"
+        style="@style/BaseTextView.Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10dp"
+        android:maxLines="4"
+        android:text="@string/dummy_provider_name"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@id/textViewDistance"
+        app:layout_constraintEnd_toStartOf="@id/rating_bar_merchant"
+        app:layout_constraintStart_toEndOf="@id/imageViewProviderLogo"
+        app:layout_constraintTop_toTopOf="@id/imageViewProviderLogo"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/rating_bar_merchant"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:theme="@style/RatingBar"
+        android:layout_marginEnd="@dimen/_8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewProviderName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewProviderName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDistance"
+        style="@style/BaseTextViewNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_distance"
+        app:layout_constraintBottom_toTopOf="@id/textViewProviderVariety"
+        app:layout_constraintStart_toStartOf="@id/textViewProviderName"
+        app:layout_constraintTop_toBottomOf="@id/textViewProviderName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewStatus"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5dp"
+        android:text="@string/dummy_status"
+        android:textColor="@color/colorStatusOpen"
+        app:layout_constraintBottom_toBottomOf="@id/textViewDistance"
+        app:layout_constraintStart_toEndOf="@id/textViewDistance"
+        app:layout_constraintTop_toTopOf="@id/textViewDistance" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewProviderVariety"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:text="@string/dummy_variety"
+        android:textAlignment="viewStart"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textViewDistance"
+        app:layout_constraintTop_toBottomOf="@id/textViewDistance"
+        app:layout_constraintVertical_bias="0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

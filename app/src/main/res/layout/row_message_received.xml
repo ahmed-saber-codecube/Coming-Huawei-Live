@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_16dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTimeStampReceived"
+        style="@style/BaseTextView.Chat.Timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:text="@string/dummy_timestamp"
+        app:layout_constraintBottom_toTopOf="@id/linearLayoutCompatChat"
+        app:layout_constraintEnd_toEndOf="@id/linearLayoutCompatChat"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompatChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTimeStampReceived">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMessageReceived"
+            style="@style/BaseTextView.Chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginEnd="@dimen/_95dp"
+            android:background="@drawable/bg_message_received"
+            android:padding="@dimen/_16dp"
+            android:text="@string/dummy_message"
+            android:textAlignment="viewStart"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageViewMessageReceived"
+            style="@style/BaseTextView.Chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:padding="@dimen/_16dp"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewChatMessageReceived"
+                android:layout_width="@dimen/_150dp"
+                android:layout_height="@dimen/_150dp"
+                android:src="@drawable/img_provider_logo" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

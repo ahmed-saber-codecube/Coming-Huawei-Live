@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBgHome">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPagerProviders"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:paddingBottom="@dimen/_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBgHome"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPagerHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayoutHome"
+                    style="@style/CustomTabLayoutStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="115dp"
+                    android:layout_marginEnd="115dp"
+                    app:tabIndicatorGravity="center"
+                    android:background="@color/colorBgHome"
+                    android:foregroundGravity="center"
+                    android:splitMotionEvents="false"
+                    app:flow_horizontalStyle="packed"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewPagerHome"
+                    app:tabBackground="@drawable/bg_pager_indicator"
+                    app:tabGravity="center"
+                    app:tabIndicator="@null"
+                    app:tabMode="scrollable"
+                    app:tabMinWidth="10dp"
+                    android:clipToPadding="false">
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewTypes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tabLayoutHome"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/row_delivery_type" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/scrollViewCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:visibility="gone"
+            app:layout_anchor="@id/appBarLayout"
+            app:layout_anchorGravity="bottom">
+
+            <!--            <com.google.android.material.chip.ChipGroup-->
+            <!--                android:id="@+id/chipGroupCategory"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:paddingStart="@dimen/_16dp"-->
+            <!--                android:paddingEnd="@dimen/_16dp"-->
+            <!--                app:singleSelection="true">-->
+
+            <!--                <com.google.android.material.chip.Chip-->
+            <!--                    android:id="@+id/chipAll"-->
+            <!--                    style="@style/BaseChip.NoIcon"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:checked="false"-->
+            <!--                    android:text="@string/label_all" />-->
+
+            <!--            </com.google.android.material.chip.ChipGroup>-->
+
+        </HorizontalScrollView>
+
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/recyclerViewCategory"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:scrollbars="none"-->
+        <!--            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+        <!--            app:layout_anchor="@id/appBarLayout"-->
+        <!--            app:layout_anchorGravity="bottom"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/imageViewSearch"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/imageViewSearch"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/imageViewSearch"-->
+        <!--            tools:itemCount="10"-->
+        <!--            tools:listitem="@layout/category_menu_row" />-->
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

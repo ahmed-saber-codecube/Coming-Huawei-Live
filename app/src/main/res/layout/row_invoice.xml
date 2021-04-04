@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/BaseCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_16dp"
+    android:layout_marginTop="@dimen/_16dp"
+    android:layout_marginEnd="@dimen/_16dp"
+    app:cardCornerRadius="@dimen/_10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_24dp"
+        android:paddingTop="@dimen/_16dp"
+        android:paddingEnd="@dimen/_16dp"
+        android:paddingBottom="@dimen/_24dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewInvoiceName"
+            style="@style/BaseTextView.Name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginStart="@dimen/_10dp"
+            android:text="@string/dummy_provider_name"
+            app:layout_constraintVertical_chainStyle="spread"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toStartOf="@+id/textViewInvoiceDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewInvoiceId"
+            style="@style/BaseTextViewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/dummy_order_id"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorTextGreyLight"
+            android:textSize="@dimen/_16sp"
+            android:layout_marginStart="@dimen/_10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewInvoiceName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewInvoiceDate"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_date"
+            android:textColor="@color/colorTextGreyLight"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

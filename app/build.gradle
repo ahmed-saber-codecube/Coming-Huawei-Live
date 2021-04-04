@@ -1,0 +1,173 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'com.huawei.agconnect'
+
+
+android {
+
+    signingConfigs {
+        debug {
+            storeFile file('./debug.keystore')
+            storePassword 'android'
+            keyAlias = 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.coming.customer"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 39
+        versionName "3.9"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "HUAWEI_API_KEY", "CgB6e3x9ipYlrB1kJ/QPyQzBh59gzPTcOLINyM0cX2mjEewe9jHwSPkXudgHJ+aEVFnVid7h0N4RS4oOOxQKAF+F")
+            buildConfigField("String", "BASE_URL", "\"18.184.119.36\"")
+            manifestPlaceholders = [crashlyticsCollectionEnabled: "false"]
+        }
+        release {
+            minifyEnabled false
+            buildConfigField("String", "HUAWEI_API_KEY", "CgB6e3x9ipYlrB1kJ/QPyQzBh59gzPTcOLINyM0cX2mjEewe9jHwSPkXudgHJ+aEVFnVid7h0N4RS4oOOxQKAF+F")
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "\"18.198.109.207\"")
+            manifestPlaceholders = [crashlyticsCollectionEnabled: "true"]
+
+        }
+    }
+    dexOptions {
+        jumboMode true
+        preDexLibraries true
+        javaMaxHeapSize "4g"
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    androidExtensions {
+        experimental = true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    kapt {
+        correctErrorTypes true
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.31"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
+
+
+    implementation 'androidx.appcompat:appcompat:1.3.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0-beta01'
+    implementation "androidx.fragment:fragment-ktx:1.3.1"
+
+    implementation 'androidx.core:core-ktx:1.3.2'
+
+    implementation 'com.google.dagger:dagger-android-support:2.15'
+
+
+    implementation 'com.huawei.agconnect:agconnect-auth:1.5.0.300'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    // if you use the support libraries
+    kapt 'com.google.dagger:dagger-android-processor:2.16'
+    kapt 'com.google.dagger:dagger-compiler:2.33'
+
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-reactivestreams-ktx:2.3.0'
+    kapt 'androidx.lifecycle:lifecycle-compiler:2.3.0'
+
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.9"
+//    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //Material Components
+    implementation 'com.google.android.material:material:1.1.0'
+
+    //Google Maps
+    implementation 'com.huawei.hms:maps:5.0.0.300'
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+    implementation 'com.google.maps:google-maps-services:0.2.7'
+    implementation 'com.huawei.hms:base:5.2.0.300'
+    implementation 'com.google.android.libraries.places:places:2.2.0'
+    implementation 'com.huawei.hms:location:5.1.0.303'
+
+    //Circle ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    //Carousel Layout Manager
+    implementation 'com.azoft.carousellayoutmanager:carousel:1.2.4'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+
+    // Add the dependencies for the Firebase Cloud Messaging and Analytics libraries
+    implementation 'com.huawei.hms:push:5.0.4.302'
+    implementation 'com.huawei.hms:hianalytics:5.2.0.301'
+
+    //payment sdk
+    implementation(name: 'oppwa.mobile-2.56.0', ext: 'aar')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:customtabs:28.0.0'
+    implementation 'com.huawei.hms:wallet:4.0.4.301'
+
+    //S3 bucket
+    //implementation "com.amazonaws:aws-android-sdk-s3:2.7.0"
+    //implementation "com.amazonaws:aws-android-sdk-cognito:2.7.0"
+    implementation 'com.karumi:dexter:6.2.1'
+    //live chat
+    implementation 'com.github.livechat:chat-window-android:v2.1.2'
+
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //paging
+    implementation 'com.github.markomilos:paginate:1.0.0'
+    //lottie
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    implementation 'com.github.stfalcon:smsverifycatcher:0.3.2'
+    implementation 'com.daimajia.androidanimations:library:2.4@aar'
+    implementation 'com.github.grumpyshoe:android-module-locationmanager:1.3.0'
+    //crashlytics
+
+   // implementation 'com.google.firebase:firebase-crashlytics-ktx'
+
+    // Dependency Injection
+    implementation 'com.google.dagger:hilt-android:2.33-beta'
+    kapt 'com.google.dagger:hilt-compiler:2.33-beta'
+    implementation "org.jetbrains.anko:anko:$anko_version"
+
+    implementation 'com.huawei.agconnect:agconnect-crash:1.4.2.301'
+    implementation 'com.huawei.agconnect:agconnect-core:1.3.1.300'
+}

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <!--    TODO: clipToOutline-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_50dp"
+        android:background="@drawable/bg_rounded_rect_18dp"
+        app:layout_constraintTop_toTopOf="@id/rootView">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close_blue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDishName"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            android:ellipsize="end"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewDishPrice"
+            app:layout_constraintStart_toStartOf="@+id/imageViewClose"
+            app:layout_constraintTop_toBottomOf="@id/imageViewClose"
+            tools:text="@string/dummy_dish_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDishPrice"
+            style="@style/BaseTextView.ItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewDishName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textViewDishName"
+            tools:text="@string/dummy_price" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewIngredients"
+            style="@style/BaseTextView.Desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginEnd="@dimen/_40dp"
+            app:layout_constraintEnd_toStartOf="@id/textViewDishPrice"
+            app:layout_constraintStart_toStartOf="@id/textViewDishName"
+            app:layout_constraintTop_toBottomOf="@id/textViewDishName"
+            tools:text="@string/dummy_ingredients" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCalorie"
+            style="@style/BaseTextViewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:drawableStart="@drawable/ic_calorie"
+            android:drawablePadding="@dimen/_4dp"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/textViewIngredients"
+            app:layout_constraintTop_toBottomOf="@id/textViewIngredients"
+            tools:text="@string/dummy_calories" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLabelSize"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/text_size"
+            app:layout_constraintStart_toStartOf="@id/textViewCalorie"
+            app:layout_constraintTop_toBottomOf="@id/textViewCalorie" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/linearAddToCart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewLabelSize">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/_5dp"
+                android:paddingBottom="@dimen/_5dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewSizes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16dp"
+                    android:layout_marginEnd="@dimen/_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_dish_size" />
+
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:id="@+id/textViewLabelExtras"-->
+                <!--                    style="@style/BaseTextView.ItemName"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="@dimen/_16dp"-->
+                <!--                    android:text="@string/text_extras"-->
+                <!--                    app:layout_constraintStart_toStartOf="@id/recyclerViewSizes"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/recyclerViewSizes" />-->
+
+
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:id="@+id/textViewLabelUpto"-->
+                <!--                    style="@style/BaseTextView.ItemPrice"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginEnd="@dimen/_16dp"-->
+                <!--                    android:background="@drawable/bg_rounded_rect_4dp"-->
+                <!--                    android:backgroundTint="@color/colorExtraLimit"-->
+                <!--                    android:paddingStart="@dimen/_8dp"-->
+                <!--                    android:paddingTop="@dimen/_4dp"-->
+                <!--                    android:paddingEnd="@dimen/_8dp"-->
+                <!--                    android:paddingBottom="@dimen/_4dp"-->
+                <!--                    android:text="@string/text_up_to_15"-->
+                <!--                    android:textSize="@dimen/_12sp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="@id/textViewLabelExtras"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintTop_toTopOf="@id/textViewLabelExtras" />-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewExtras"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/recyclerViewSizes"
+                    app:layout_constraintStart_toStartOf="@id/recyclerViewSizes"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerViewSizes"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/row_addition" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonMinus"
+            style="@style/ButtonMinus"
+            android:layout_width="@dimen/_36dp"
+            android:layout_height="@dimen/_36dp"
+            android:layout_marginStart="@dimen/_16dp"
+            app:layout_constraintBottom_toBottomOf="@id/linearAddToCart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/linearAddToCart" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDishQuantity"
+            style="@style/BaseTextViewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_14dp"
+            android:paddingEnd="@dimen/_14dp"
+            android:text="@string/dummy_quantity"
+            android:textColor="@color/colorTextGreyDark"
+            app:layout_constraintBottom_toBottomOf="@id/buttonMinus"
+            app:layout_constraintStart_toEndOf="@id/buttonMinus"
+            app:layout_constraintTop_toTopOf="@id/buttonMinus" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonPlus"
+            style="@style/ButtonPlus"
+            android:layout_width="@dimen/_36dp"
+            android:layout_height="@dimen/_36dp"
+            app:layout_constraintBottom_toBottomOf="@id/buttonMinus"
+            app:layout_constraintStart_toEndOf="@id/tvDishQuantity"
+            app:layout_constraintTop_toTopOf="@id/buttonMinus" />
+        <!--android:visibility="invisible"-->
+        <LinearLayout
+            android:id="@+id/linearAddToCart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8dp"
+            android:background="@drawable/bg_rounded_rect_64dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_8dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/buttonPlus"
+            app:layout_constraintVertical_bias="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelAddToCart"
+                style="@style/BaseTextView.ItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_16dp"
+                android:text="@string/text_add_to_cart"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/_16sp" />
+
+            <!--    <View
+            android:id="@+id/viewLine"
+            android:layout_width="@dimen/_1dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10dp"
+            android:background="@color/colorWhite" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDishTotal"
+            style="@style/BaseTextView.ItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/_16sp"
+            tools:text="@string/dummy_price" />
+            -->
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewDish"
+        android:layout_width="@dimen/_100dp"
+        android:layout_height="@dimen/_100dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_50dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rootView"
+        tools:srcCompat="@drawable/img_provider_logo_medium" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

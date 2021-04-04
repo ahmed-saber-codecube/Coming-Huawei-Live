@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ahmed">
+
+    <com.huawei.hms.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="5" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_arrow"
+        android:layoutDirection="ltr" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelTrack"
+        style="@style/BaseTextView.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_track_order"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageViewBack" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewDriver"
+        style="@style/BaseCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16dp"
+        app:cardCornerRadius="@dimen/_16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--            TODO: Clip to outline-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewDriver"
+                android:layout_width="@dimen/_65dp"
+                android:layout_height="@dimen/_65dp"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:background="@drawable/bg_rounded_rect_8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img_driver" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDriverName"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_8dp"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toTopOf="@id/textViewLabelDriver"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageViewDriver"
+                app:layout_constraintTop_toTopOf="@id/imageViewDriver"
+                tools:text="@string/dummy_name" />
+
+            <!--            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:id="@+id/imageViewCall"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginEnd="@dimen/_8dp"-->
+            <!--                android:visibility="invisible"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@id/imageViewMessage"-->
+            <!--                app:layout_constraintEnd_toStartOf="@id/imageViewMessage"-->
+            <!--                app:layout_constraintTop_toTopOf="@id/imageViewMessage"-->
+            <!--                app:srcCompat="@drawable/img_call" />-->
+
+            <!--            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:id="@+id/imageViewMessage"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_margin="@dimen/_16dp"-->
+            <!--                android:visibility="invisible"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent"-->
+            <!--                app:srcCompat="@drawable/img_msg" />-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelDriver"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/text_driver"
+                android:textColor="@color/colorSeparator"
+                android:textSize="@dimen/_16sp"
+                android:layout_marginEnd="@dimen/_16dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewDriver"
+                app:layout_constraintStart_toStartOf="@id/textViewDriverName"
+                app:layout_constraintTop_toBottomOf="@id/textViewDriverName" />
+
+            <View
+                android:id="@+id/separatorHor"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/_32dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginEnd="@dimen/_32dp"
+                android:background="@color/colorSeparator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewDriver" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                app:layout_constraintBottom_toBottomOf="@id/separatorVer"
+                app:layout_constraintStart_toStartOf="@id/imageViewDriver"
+                app:layout_constraintTop_toTopOf="@id/separatorVer"
+                app:srcCompat="@drawable/ic_clock" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDeliveryTime"
+                style="@style/BaseTextViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8dp"
+                android:text="@string/dummy_delivery_time"
+                android:textSize="@dimen/_16sp"
+                android:visibility="invisible"
+                app:fontFamily="@font/almarai_regular"
+                app:layout_constraintBottom_toTopOf="@id/textViewLabelTime"
+                app:layout_constraintStart_toEndOf="@id/imageViewClock"
+                app:layout_constraintTop_toTopOf="@id/imageViewClock" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorSeparator"
+                android:textSize="@dimen/_12sp"
+                android:visibility="invisible"
+                app:fontFamily="@font/almarai_regular"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewClock"
+                app:layout_constraintStart_toStartOf="@id/textViewDeliveryTime"
+                app:layout_constraintTop_toBottomOf="@id/textViewDeliveryTime"
+                tools:text="@string/text_delivery_time" />
+
+            <View
+                android:id="@+id/separatorVer"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:visibility="invisible"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:background="@color/colorSeparator"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separatorHor" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/ratingBarRestaurant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8dp"
+                android:minHeight="0dp"
+                android:progressDrawable="@drawable/bg_rating_bar"
+                app:layout_constraintBottom_toBottomOf="@id/textViewRating"
+                app:layout_constraintEnd_toStartOf="@id/textViewRating"
+                app:layout_constraintTop_toTopOf="@id/textViewRating" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewRating"
+                style="@style/BaseTextViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textSize="@dimen/_14sp"
+                android:layout_marginEnd="@dimen/_10dp"
+                app:layout_constraintBottom_toBottomOf="@id/separatorVer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/separatorVer"
+                tools:text="@string/dummy_rating" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

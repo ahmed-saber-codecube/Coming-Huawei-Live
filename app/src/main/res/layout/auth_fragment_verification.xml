@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelVerification"
+        style="@style/BaseTextView.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_verification"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageViewBack" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelVerifyDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32dp"
+        android:text="@string/text_verify_desc"
+        android:textColor="@color/colorTextGreyLight"
+        style="@style/BaseTextView"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelVerification" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextOtp1"
+        style="@style/EditTextOtp"
+        android:layout_width="@dimen/_56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_64dp"
+        android:digits="0123456789"
+        android:imeOptions="actionDone"
+        android:inputType="numberPassword"
+        app:layout_constraintEnd_toStartOf="@id/editTextOtp2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelVerifyDesc" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextOtp2"
+        style="@style/EditTextOtp"
+        android:layout_width="@dimen/_56dp"
+        android:layout_height="wrap_content"
+        android:digits="0123456789"
+        android:imeOptions="actionDone"
+        android:inputType="numberPassword"
+        app:layout_constraintBottom_toBottomOf="@id/editTextOtp1"
+        app:layout_constraintEnd_toStartOf="@id/editTextOtp3"
+        app:layout_constraintStart_toEndOf="@id/editTextOtp1"
+        app:layout_constraintTop_toTopOf="@id/editTextOtp1" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextOtp3"
+        style="@style/EditTextOtp"
+        android:layout_width="@dimen/_56dp"
+        android:layout_height="wrap_content"
+        android:digits="0123456789"
+        android:imeOptions="actionDone"
+        android:inputType="numberPassword"
+        app:layout_constraintBottom_toBottomOf="@id/editTextOtp2"
+        app:layout_constraintEnd_toStartOf="@id/editTextOtp4"
+        app:layout_constraintStart_toEndOf="@id/editTextOtp2"
+        app:layout_constraintTop_toTopOf="@id/editTextOtp2" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextOtp4"
+        style="@style/EditTextOtp"
+        android:layout_width="@dimen/_56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:digits="0123456789"
+        android:imeOptions="actionDone"
+        android:inputType="number|numberPassword"
+        app:layout_constraintBottom_toBottomOf="@id/editTextOtp3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/editTextOtp3"
+        app:layout_constraintTop_toTopOf="@id/editTextOtp3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonVerify"
+        style="@style/BaseButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_64dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:text="@string/text_verify"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextOtp1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewResend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10dp"
+        android:text="@string/dummy_resend"
+        android:textColor="@color/colorTextGreyLight"
+        style="@style/BaseTextViewNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonVerify" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

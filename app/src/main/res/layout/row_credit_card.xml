@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/_16dp"
+    android:paddingTop="@dimen/_16dp"
+    android:paddingEnd="@dimen/_16dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewCardBg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_4dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_card_bg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewCardLogo"
+        android:layout_width="@dimen/_65dp"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_25dp"
+        android:layout_marginEnd="@dimen/_25dp"
+        android:elevation="@dimen/_4dp"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="@id/imageViewCardBg"
+        app:layout_constraintTop_toTopOf="@id/imageViewCardBg"
+        app:srcCompat="@drawable/img_card_logo" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCardNum1"
+        style="@style/BaseTextView.Desc.CardDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_card_no"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewCardBg"
+        app:layout_constraintEnd_toEndOf="@id/imageViewCardLogo"
+        app:layout_constraintTop_toTopOf="@id/imageViewCardBg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCardNum2"
+        style="@style/BaseTextView.Desc.CardDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_asterisks"
+        app:layout_constraintBottom_toBottomOf="@id/textViewCardNum1"
+        app:layout_constraintEnd_toStartOf="@id/textViewCardNum1"
+        app:layout_constraintStart_toEndOf="@id/textViewCardNum3"
+        app:layout_constraintTop_toTopOf="@id/textViewCardNum1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCardNum3"
+        style="@style/BaseTextView.Desc.CardDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_asterisks"
+        app:layout_constraintBottom_toBottomOf="@id/textViewCardNum2"
+        app:layout_constraintEnd_toStartOf="@id/textViewCardNum2"
+        app:layout_constraintStart_toEndOf="@id/textViewCardNum4"
+        app:layout_constraintTop_toTopOf="@id/textViewCardNum2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCardNum4"
+        style="@style/BaseTextView.Desc.CardDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_asterisks"
+        app:layout_constraintBottom_toBottomOf="@id/textViewCardNum3"
+        app:layout_constraintEnd_toStartOf="@id/textViewCardNum3"
+        app:layout_constraintStart_toStartOf="@id/imageViewCardBg"
+        app:layout_constraintTop_toTopOf="@id/textViewCardNum3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelCardHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4dp"
+        android:elevation="@dimen/_4dp"
+        android:text="@string/text_card_holder"
+        android:textColor="@color/colorLabels"
+        android:textSize="@dimen/_10sp"
+        app:fontFamily="@font/almarai_regular"
+        app:layout_constraintBottom_toTopOf="@id/textViewHolderName"
+        app:layout_constraintStart_toStartOf="@id/textViewHolderName" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewHolderName"
+        style="@style/BaseTextView.Desc.CardDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_24dp"
+        android:maxLength="20"
+        android:text="@string/dummy_name_2"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewCardBg"
+        app:layout_constraintStart_toStartOf="@id/imageViewCardBg"
+        app:textAllCaps="true" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewExpiryDate"
+        style="@style/BaseTextView.Desc.CardDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_24dp"
+        android:text="@string/dummy_exp_date"
+        app:layout_constraintBottom_toBottomOf="@id/textViewHolderName"
+        app:layout_constraintEnd_toEndOf="@id/imageViewCardBg"
+        app:layout_constraintStart_toEndOf="@id/textViewHolderName"
+        app:layout_constraintTop_toTopOf="@id/textViewHolderName" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelExpires"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4dp"
+        android:elevation="@dimen/_4dp"
+        android:text="@string/text_expires"
+        android:textColor="@color/colorLabels"
+        android:textSize="@dimen/_10sp"
+        app:fontFamily="@font/almarai_regular"
+        app:layout_constraintBottom_toTopOf="@id/textViewExpiryDate"
+        app:layout_constraintStart_toStartOf="@id/textViewExpiryDate" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewRemove"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/text_remove_this_card"
+        android:textColor="@color/colorRemove"
+        android:textSize="@dimen/_18sp"
+        app:layout_constraintStart_toStartOf="@id/imageViewCardBg"
+        app:layout_constraintTop_toBottomOf="@id/imageViewCardBg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAddCard"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:gravity="end"
+        android:text="@string/text_add_new_card"
+        android:textColor="@color/colorTextBlue"
+        android:textSize="@dimen/_18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewCardBg"
+        app:layout_constraintTop_toBottomOf="@id/imageViewCardBg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

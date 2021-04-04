@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBgHome">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_black" />
+
+    <!--android:digits="@string/text_allow_digit_string_a_to_z"-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        app:boxBackgroundMode="none"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewBack"
+        app:layout_constraintTop_toTopOf="@id/imageViewBack">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextSearch"
+            style="@style/BaseEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_search"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="@dimen/_16dp"
+            android:paddingBottom="0dp"
+            android:singleLine="true"
+            android:textAlignment="viewStart" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    <androidx.appcompat.widget.AppCompatEditText-->
+    <!--        android:id="@+id/editTextSearch"-->
+    <!--        style="@style/BaseEditText"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginTop="@dimen/_8dp"-->
+    <!--        android:layout_marginEnd="@dimen/_16dp"-->
+    <!--        android:layout_marginBottom="@dimen/_8dp"-->
+    <!--        android:drawableEnd="@drawable/ic_clear"-->
+    <!--        android:hint="@string/hint_search"-->
+    <!--        android:imeOptions="actionDone"-->
+    <!--        android:paddingStart="@dimen/_16dp"-->
+    <!--        android:paddingTop="0dp"-->
+    <!--        android:paddingEnd="@dimen/_16dp"-->
+    <!--        android:paddingBottom="0dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/imageViewBack"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/imageViewBack"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/imageViewBack" />-->
+
+    <HorizontalScrollView
+        android:id="@+id/scrollViewCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:scrollbars="none"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewBack">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_16dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAll"
+                style="@style/BaseChip.NoIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/label_all" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/recyclerViewCategory"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/_8dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:scrollbars="none"-->
+    <!--        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+    <!--        app:layout_anchorGravity="bottom"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/imageViewBack"-->
+    <!--        tools:itemCount="10"-->
+    <!--        tools:listitem="@layout/category_menu_row" />-->
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerProviders"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:saveEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewBack" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

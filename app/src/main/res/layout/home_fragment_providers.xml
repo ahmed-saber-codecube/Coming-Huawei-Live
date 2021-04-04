@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?><!--<androidx.core.widget.NestedScrollView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--        <com.cooltechworks.views.shimmer.ShimmerRecyclerView-->
+    <!--            android:id="@+id/shimmer_recycler_view"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            app:shimmer_demo_child_count="5"-->
+    <!--            app:shimmer_demo_layout="@layout/shimmer_row_provider"-->
+    <!--            app:shimmer_demo_layout_manager_type="linear_vertical"-->
+    <!--            app:shimmer_demo_angle="20"-->
+    <!--            android:paddingBottom="@dimen/_16dp"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"-->
+    <!--            />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProviders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="true"
+        android:paddingBottom="@dimen/_16dp"
+        tools:listitem="@layout/row_provider" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDtaNotFound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25dp"
+        android:gravity="center"
+        android:text="@string/label_data_not_found"
+        android:visibility="gone"
+        style="@style/BaseTextView.ItemName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</RelativeLayout><!--</androidx.core.widget.NestedScrollView>-->

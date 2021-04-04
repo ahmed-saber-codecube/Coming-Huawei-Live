@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewOptionTitle"
+        style="@style/BaseTextView.ItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_32dp"
+        android:drawableStart="@drawable/ic_voucher"
+        android:drawablePadding="@dimen/_16dp"
+        android:paddingTop="@dimen/_12dp"
+        android:paddingBottom="@dimen/_12dp"
+        android:text="@string/menu_referral_code"
+        android:textColor="@color/colorTextGreyDark"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNotificationBadge"
+        android:layout_width="@dimen/_28dp"
+        android:layout_height="@dimen/_28dp"
+        android:layout_marginEnd="@dimen/_32dp"
+        android:background="@drawable/bg_rounded_rect_64dp"
+        android:gravity="center"
+        android:text="@string/dummy_number"
+        android:textColor="@color/colorTextWhite"
+        android:textSize="@dimen/_14sp"
+        android:visibility="gone"
+        app:fontFamily="@font/almarai_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1dp"
+        android:alpha="0.2"
+        android:background="@color/colorSeparator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewOptionTitle" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

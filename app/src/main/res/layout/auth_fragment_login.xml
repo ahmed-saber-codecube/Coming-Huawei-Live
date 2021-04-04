@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineHor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor"
+        app:srcCompat="@drawable/img_logo" />
+
+    <LinearLayout
+        android:id="@+id/linearLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_64dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:background="@drawable/bg_edit_text"
+        android:orientation="horizontal"
+        android:padding="@dimen/_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewLogin">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextCountryCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:enabled="true"
+            android:focusable="false"
+            android:gravity="center"
+            style="@style/BaseTextView.ItemNumber"
+            android:text="+966"
+            android:textColor="@color/color_edit_text_disabled" />
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="@dimen/_1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:background="@color/colorSeparator" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextMobile"
+            style="@style/BaseTextView.ItemNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@null"
+            android:digits="0123456789"
+            android:hint="@string/hint_mobile_number"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="15"
+            android:maxLines="1" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogin"
+        style="@style/BaseButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_margin="@dimen/_16dp"
+        android:text="@string/menu_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLogin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/confirm_privacy_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/bg_checkbox"
+                android:checked="false" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/confirm_privacy_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm_privacy_policy"
+                android:clickable="true"
+                android:textColor="@color/colorTextBlue"
+                style="@style/BaseTextView.ItemName" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_40dp"
+        android:padding="@dimen/_8dp"
+        android:text="@string/text_skip"
+        android:textColor="@color/colorTextBlue"
+        style="@style/BaseTextView.ItemName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

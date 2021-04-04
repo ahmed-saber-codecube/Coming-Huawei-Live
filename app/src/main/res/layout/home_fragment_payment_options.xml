@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCreditCards"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40dp"
+        android:drawableStart="@drawable/ic_card"
+        android:drawableEnd="@drawable/ic_right_black"
+        android:drawablePadding="@dimen/_16dp"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_16dp"
+        android:paddingTop="@dimen/_16dp"
+        android:paddingEnd="@dimen/_16dp"
+        android:paddingBottom="@dimen/_16dp"
+        android:text="@string/text_credit_cards"
+        android:textColor="@color/colorTextGreyDark"
+        android:textSize="@dimen/_20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/separator1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1dp"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginEnd="@dimen/_32dp"
+        android:background="@color/colorSeparator2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewCreditCards" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCredits"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_coins"
+        android:drawableEnd="@drawable/ic_right_black"
+        android:drawablePadding="@dimen/_16dp"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_16dp"
+        android:paddingTop="@dimen/_16dp"
+        android:paddingEnd="@dimen/_16dp"
+        android:paddingBottom="@dimen/_16dp"
+        android:text="@string/text_account_credits"
+        android:textColor="@color/colorTextGreyDark"
+        android:textSize="@dimen/_20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator1" />
+
+    <View
+        android:id="@+id/separator2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1dp"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginEnd="@dimen/_32dp"
+        android:background="@color/colorSeparator2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewCredits" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewRedeem"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_gift"
+        android:drawableEnd="@drawable/ic_right_black"
+        android:drawablePadding="@dimen/_16dp"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/_16dp"
+        android:paddingTop="@dimen/_16dp"
+        android:paddingEnd="@dimen/_16dp"
+        android:paddingBottom="@dimen/_16dp"
+        android:text="@string/text_redeem_voucher"
+        android:textColor="@color/colorTextGreyDark"
+        android:textSize="@dimen/_20sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

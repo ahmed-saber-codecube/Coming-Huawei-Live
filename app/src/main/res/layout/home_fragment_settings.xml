@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNotifications"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40dp"
+        android:drawableStart="@drawable/ic_bell"
+        android:drawablePadding="@dimen/_16dp"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_16dp"
+        android:text="@string/text_notifs"
+        android:textColor="@color/colorTextGreyDark"
+        android:textSize="@dimen/_20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkBoxNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/bg_checkbox_switch"
+        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="@id/textViewNotifications"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textViewNotifications" />
+
+    <View
+        android:id="@+id/separator1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1dp"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginEnd="@dimen/_32dp"
+        android:background="@color/colorSeparator2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewNotifications" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLanguage"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_globe"
+        android:drawablePadding="@dimen/_16dp"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_16sp"
+        android:text="@string/text_language"
+        android:textColor="@color/colorTextGreyDark"
+        android:textSize="@dimen/_20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator1" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupLanguage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginTop="@dimen/_24dp"
+        android:layout_marginEnd="@dimen/_32dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLanguage">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioButtonEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8dp"
+            android:button="@drawable/bg_radio_button_language"
+            android:drawableEnd="@drawable/img_flag_uk"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="viewStart"
+            style="@style/BaseTextView.ItemName"
+            android:text="@string/text_english_uk"
+            android:textColor="@color/colorTextGreyDark"
+            android:textSize="@dimen/_18sp" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioButtonArabic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:button="@drawable/bg_radio_button_language"
+            android:drawableEnd="@drawable/img_flag_sar"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="0dp"
+            style="@style/BaseTextView.ItemName"
+            android:text="@string/label_arabic_language"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorTextGreyDark"
+            android:textSize="@dimen/_18sp" />
+
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

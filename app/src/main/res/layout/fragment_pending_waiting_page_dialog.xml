@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:id="@+id/pendingRootView">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/buttonTrackOrder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- TODO: Implement the weird background-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_8dp"
+            android:paddingBottom="@dimen/_8dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pendingTextViewHelp"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_headset"
+                android:drawablePadding="@dimen/_8dp"
+                android:gravity="center"
+                android:padding="@dimen/_16dp"
+                android:text="@string/text_help"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTimer"
+                style="@style/BaseTextView.Timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dummy_timer"
+                android:visibility="invisible"
+                android:layout_marginTop="@dimen/_16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelWait"
+                style="@style/BaseTextView.Desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:text="@string/text_wait"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewTimer" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pending_payment_status"
+                style="@style/BaseTextView.ItemName"
+                android:textColor="@color/quantum_white_100"
+                android:text="@string/pending_payment"
+                android:background="@drawable/circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_8dp"
+                android:layout_margin="@dimen/_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.489" />
+
+            <View
+                android:id="@+id/viewLine1"
+                android:layout_width="@dimen/_2dp"
+                android:layout_height="@dimen/_30dp"
+                android:layout_marginStart="@dimen/_40dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:background="@color/colorCheckboxStatusUnchecked"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelWait" />
+
+            <View
+                android:id="@+id/viewLine2"
+                android:layout_width="@dimen/_2dp"
+                android:layout_height="@dimen/_30dp"
+                android:background="@color/colorCheckboxStatusUnchecked"
+                app:layout_constraintEnd_toEndOf="@id/viewLine1"
+                app:layout_constraintStart_toStartOf="@id/viewLine1"
+                app:layout_constraintTop_toBottomOf="@id/viewLine1" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkboxReceived"
+                style="@style/CheckboxOrderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/bg_checkbox_received"
+                android:checked="false"
+                android:foregroundGravity="center"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:textColor="@color/color_checkbox_status_text"
+                app:layout_constraintBottom_toTopOf="@id/viewLine1"
+                app:layout_constraintEnd_toEndOf="@id/viewLine1"
+                app:layout_constraintStart_toStartOf="@id/viewLine1"
+                app:layout_constraintTop_toTopOf="@id/viewLine1" />
+
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                android:id="@+id/textViewOrderReceived"
+                style="@style/BaseTextView.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:text="@string/text_order_received"
+                android:textColor="@color/color_checkbox_status_text"
+                app:layout_constraintBottom_toBottomOf="@id/checkboxReceived"
+                app:layout_constraintStart_toEndOf="@id/checkboxReceived"
+                app:layout_constraintTop_toTopOf="@id/checkboxReceived" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/pendingWaitingFoodAnim"
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_50dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewOrderOnTheWay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewOrderPrepared"
+                app:layout_constraintTop_toTopOf="@+id/textViewOrderReceived"
+                app:layout_constraintVertical_bias="0.485"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/food_loading_animation" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkboxPreparation"
+                style="@style/CheckboxOrderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/bg_checkbox_prepared"
+                android:checked="false"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:textColor="@color/color_checkbox_status_text"
+                app:layout_constraintBottom_toTopOf="@id/checkboxOnTheWay"
+                app:layout_constraintEnd_toEndOf="@id/checkboxReceived"
+                app:layout_constraintStart_toStartOf="@id/checkboxReceived"
+                app:layout_constraintTop_toBottomOf="@id/checkboxReceived" />
+
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                android:id="@+id/textViewOrderPrepared"
+                style="@style/BaseTextView.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:text="@string/text_order_preparation"
+                android:textColor="@color/color_checkbox_status_text"
+                app:layout_constraintBottom_toBottomOf="@id/checkboxPreparation"
+                app:layout_constraintStart_toEndOf="@id/checkboxPreparation"
+                app:layout_constraintTop_toTopOf="@id/checkboxPreparation" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkboxOnTheWay"
+                style="@style/CheckboxOrderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/bg_on_the_way_received"
+                android:checked="false"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:textColor="@color/color_checkbox_status_text"
+                app:layout_constraintBottom_toBottomOf="@id/viewLine2"
+                app:layout_constraintEnd_toEndOf="@id/checkboxPreparation"
+                app:layout_constraintStart_toStartOf="@id/checkboxPreparation"
+                app:layout_constraintTop_toBottomOf="@id/viewLine2" />
+
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                android:id="@+id/textViewOrderOnTheWay"
+                style="@style/BaseTextView.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:text="@string/text_order_on_the_way"
+                android:textColor="@color/color_checkbox_status_text"
+                app:layout_constraintBottom_toBottomOf="@id/checkboxOnTheWay"
+                app:layout_constraintStart_toEndOf="@id/checkboxOnTheWay"
+                app:layout_constraintTop_toTopOf="@id/checkboxOnTheWay" />
+
+            <!--            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:id="@+id/imageViewCutout"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="@dimen/_8dp"-->
+            <!--                android:scaleType="fitXY"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/checkboxOnTheWay"-->
+            <!--                app:srcCompat="@drawable/img_cutout" />-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOrderId"
+                style="@style/BaseTextViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_copy_grey"
+                android:drawablePadding="@dimen/_8dp"
+                android:textColor="@color/colorTextInactive"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkboxOnTheWay"
+                tools:text="@string/dummy_order_id" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelSubtotal"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40dp"
+                android:layout_marginTop="@dimen/_8dp"
+                android:text="@string/text_subtotal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewOrderId" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pendingtextViewSubtotal"
+                style="@style/BaseTextViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_40dp"
+                android:text="@string/dummy_price"
+                app:layout_constraintBottom_toBottomOf="@id/textViewLabelSubtotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelSubtotal" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelDelivery"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:text="@string/text_delivery"
+                app:layout_constraintStart_toStartOf="@id/textViewLabelSubtotal"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelSubtotal" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pendingtextViewDelivery"
+                style="@style/BaseTextViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dummy_price"
+                app:layout_constraintBottom_toBottomOf="@id/textViewLabelDelivery"
+                app:layout_constraintEnd_toEndOf="@id/pendingtextViewSubtotal"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelDelivery" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelTax"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:text="@string/text_tax"
+                app:layout_constraintStart_toStartOf="@id/textViewLabelDelivery"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelDelivery" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelDiscount"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:text="@string/label_discount"
+                android:textSize="@dimen/_18sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/textViewLabelTax"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelTax" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pendingtextViewTax"
+                style="@style/BaseTextViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dummy_price"
+                app:layout_constraintBottom_toBottomOf="@id/textViewLabelTax"
+                app:layout_constraintEnd_toEndOf="@id/pendingtextViewDelivery"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelTax" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDiscount"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dummy_price"
+                android:textSize="@dimen/_18sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewTotal"
+                app:layout_constraintEnd_toEndOf="@id/pendingtextViewDelivery"
+                app:layout_constraintTop_toTopOf="@+id/textViewTax" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:text="@string/text_total"
+                android:textColor="@color/colorTotal"
+                style="@style/BaseTextView.ItemName"
+                app:layout_constraintStart_toStartOf="@id/textViewLabelTax"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelDiscount" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pendingtextViewTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dummy_price"
+                android:textColor="@color/colorTotal"
+                style="@style/BaseTextViewNumber"
+                app:layout_constraintBottom_toBottomOf="@id/textViewLabelTotal"
+                app:layout_constraintEnd_toEndOf="@id/pendingtextViewTax"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelTotal" />
+
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/pendingCheckBoxWallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/wallet"
+                android:paddingStart="@dimen/_16dp"
+                android:paddingEnd="0dp"
+                android:button="@drawable/bg_checkbox"
+                android:checked="false"
+                android:text="@string/text_wallet"
+                style="@style/BaseTextView.ItemName"
+                android:textColor="@color/colorTextGreyDark"
+                android:layout_marginStart="@dimen/_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLabelPaymentMethod" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewWallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dummy_price"
+                android:textColor="@color/colorTotal"
+                android:textSize="@dimen/_18sp"
+                style="@style/BaseTextViewNumber"
+                app:layout_constraintBottom_toBottomOf="@id/pendingCheckBoxWallet"
+                app:layout_constraintEnd_toEndOf="@id/pendingtextViewTotal"
+                app:layout_constraintTop_toTopOf="@id/pendingCheckBoxWallet" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewHint"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:text="@string/dummy_Hint"
+                android:textColor="@color/colorDecrementEnabled"
+                android:textSize="@dimen/_12sp"
+                android:visibility="gone"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/pendingCheckBoxWallet"
+                app:layout_constraintTop_toBottomOf="@id/pendingCheckBoxWallet" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelPaymentMethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_8dp"
+                android:text="@string/text_payment_method"
+                android:textColor="@color/colorTextGreyDark2"
+                style="@style/BaseTextView.ItemName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelTotal" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintPaymentMethod"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16dp"
+                android:background="@drawable/bg_round_rect_border_28dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewHint">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewLabelChooseMethod"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_24dp"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:text="@string/text_choose_method"
+                    android:textColor="@color/colorPaymentMethodBorder"
+                    android:textSize="@dimen/_16sp"
+                    style="@style/BaseTextView.ItemName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewAddNewPaymentMethods"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewLabelChooseMethod"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_payment_method" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonChooseMethod"
+                style="@style/BaseButton.Cart.New"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35dp"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:drawableEnd="@drawable/ic_down_arrow_white"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/_24dp"
+                android:paddingEnd="@dimen/_24dp"
+                android:text="@string/text_choose_method"
+                android:textColor="@color/colorBlue"
+                app:drawableTint="@color/colorBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/constraintPaymentMethod" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonTrackOrder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:stateListAnimator="@null"
+        android:text="@string/text_track_order"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/_30dp"
+        app:icon="@drawable/ic_location"
+        app:iconTintMode="multiply"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonPay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:layout_goneMarginTop="@dimen/_64dp"
+        style="@style/BaseButton.Cart.New" />
+
+    <!--    <androidx.appcompat.widget.AppCompatButton-->
+    <!--        android:id="@+id/buttonContact"-->
+    <!--        style="@style/BaseButton.Cart.Back"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="@dimen/_35dp"-->
+    <!--        android:layout_marginEnd="@dimen/_16dp"-->
+    <!--        android:text="@string/text_contact_driver"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/buttonTrackOrder"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/buttonTrackOrder"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/buttonTrackOrder" />-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonPay"
+        style="@style/BaseButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35dp"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:backgroundTint="@color/colorStatusOpen"
+        android:text="@string/text_pay"
+        android:textSize="@dimen/_14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

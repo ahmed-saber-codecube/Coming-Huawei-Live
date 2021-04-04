@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/materialCardViewRoot"
+    style="@style/BaseCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_16sp"
+    android:layout_marginTop="@dimen/_8sp"
+    android:layout_marginEnd="@dimen/_16dp"
+    app:cardCornerRadius="@dimen/_15dp"
+    android:elevation="@dimen/_5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewOrder"
+            android:layout_width="@dimen/_64dp"
+            android:layout_height="@dimen/_64dp"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_15dp"
+            android:layout_marginBottom="@dimen/_15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/img_provider_logo" />
+
+        <!--android:background="@drawable/bg_rounded_rect_10dp"-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewProviderName"
+            style="@style/BaseTextView.Name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAlignment="viewStart"
+            android:text="@string/dummy_provider_name"
+            app:layout_constraintBottom_toTopOf="@id/textViewOrderStatus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewOrder"
+            app:layout_constraintTop_toTopOf="@id/imageViewOrder"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewOrderStatus"
+            style="@style/BaseTextView.Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginBottom="@dimen/_5dp"
+            android:text="@string/text_on_the_way"
+            android:textColor="@color/colorStatusOpen"
+            app:layout_constraintBottom_toTopOf="@id/textViewOrderDate"
+            app:layout_constraintStart_toStartOf="@id/textViewProviderName"
+            app:layout_constraintTop_toBottomOf="@id/textViewProviderName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewOrderDate"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_date_1"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewOrder"
+            app:layout_constraintStart_toStartOf="@id/textViewOrderStatus"
+            app:layout_constraintTop_toBottomOf="@id/textViewOrderStatus" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewOfferBadge"
+            android:layout_width="@dimen/_20dp"
+            android:layout_height="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_8dp"
+            android:background="@drawable/bg_rounded_rect_64dp"
+            android:gravity="center"
+            android:text="@string/dummy_number"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/_14sp"
+            android:visibility="gone"
+            app:fontFamily="@font/almarai_bold"
+            app:layout_constraintBottom_toBottomOf="@id/textViewOrderStatus"
+            app:layout_constraintStart_toEndOf="@id/textViewOrderStatus"
+            app:layout_constraintTop_toTopOf="@id/textViewOrderStatus" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewOrderPrice"
+            style="@style/BaseTextViewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_1dp"
+            android:text="12"
+            android:textColor="@color/colorTextGreyDark2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textViewSRLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewSRLabel"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:text="@string/label_sr"
+            android:textColor="@color/colorTextGreyDark2"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewOrderPrice"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

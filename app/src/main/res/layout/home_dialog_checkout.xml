@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_rounded_rect_18dp"
+    android:fillViewport="true">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mapContainer"
+        android:name="com.huawei.hms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hardwareAccelerated="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/constraintCheckout" />
+
+    <ImageView
+        android:id="@+id/marker"
+        android:layout_width="@dimen/_25dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mapContainer"
+        app:layout_constraintEnd_toEndOf="@+id/mapContainer"
+        app:layout_constraintStart_toStartOf="@+id/mapContainer"
+        app:layout_constraintTop_toTopOf="@+id/mapContainer"
+        app:srcCompat="@drawable/ic_map_marker" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/pickCurrentLocation"
+        android:layout_width="@dimen/_38dp"
+        android:layout_height="@dimen/_44dp"
+        android:layout_margin="@dimen/_8dp"
+        android:background="@drawable/ic_current_loc"
+        app:layout_constraintBottom_toBottomOf="@+id/mapContainer"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--    <ScrollView-->
+    <!--        android:id="@+id/scrollView"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginTop="@dimen/_16dp"-->
+    <!--        android:layout_marginBottom="@dimen/_16dp"-->
+    <!--        android:fillViewport="true"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/buttonCheckout"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/mapContainer">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_rect_18dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCheckout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mapContainer">
+
+        <!--<androidx.fragment.app.FragmentContainerView
+                android:id="@+id/mapContainer"
+                android:name="com.huawei.hms.maps.SupportMapFragment"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_200dp"
+                android:layout_marginBottom="@dimen/_32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLabelDetails"
+            style="@style/BaseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_24dp"
+            android:text="@string/text_delivery_details"
+            android:textColor="@color/colorTextGreyDark2"
+            android:textSize="@dimen/_18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLabelInstruct"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:text="@string/text_delivery_instructions"
+            android:textColor="@color/colorTextBlue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewLabelDetails" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/editTextInstructions"
+            style="@style/BaseEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:gravity="start|top"
+            android:hint="@string/hint_instructions"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:layout_marginBottom="@dimen/_8dp"
+            android:maxLength="1000"
+            android:maxLines="4"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewLabelInstruct" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBoxInstruct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/bg_checkbox_dropdown"
+            android:checked="true"
+            android:minHeight="0dp"
+            android:paddingTop="@dimen/_10dp"
+            android:paddingBottom="@dimen/_10dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewLabelInstruct"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textViewLabelInstruct" />
+
+        <!--            <View-->
+        <!--                android:id="@+id/separator2"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="1dp"-->
+        <!--                android:layout_marginTop="@dimen/_16dp"-->
+        <!--                android:background="@color/colorSeparator"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@id/editTextAddress" />-->
+
+        <!--            <androidx.appcompat.widget.AppCompatTextView-->
+        <!--                android:id="@+id/textViewLabelInstructions"-->
+        <!--                style="@style/BaseTextView.ItemName"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="@dimen/_16dp"-->
+        <!--                android:layout_marginTop="@dimen/_16dp"-->
+        <!--                android:text="@string/text_delivery_instructions"-->
+        <!--                android:textColor="@color/colorTextBlue"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@id/separator2"-->
+        <!--                app:layout_goneMarginBottom="@dimen/_16dp" />-->
+
+        <!--            <androidx.appcompat.widget.AppCompatCheckBox-->
+        <!--                android:id="@+id/checkBoxInstructions"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:button="@drawable/bg_checkbox_dropdown"-->
+        <!--                android:checked="false"-->
+        <!--                android:minHeight="0dp"-->
+        <!--                android:paddingTop="@dimen/_10dp"-->
+        <!--                android:paddingBottom="@dimen/_10dp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="@id/textViewLabelInstructions"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="@id/textViewLabelInstructions" />-->
+
+
+        <!--            <androidx.appcompat.widget.AppCompatEditText-->
+        <!--                android:id="@+id/editTextInstructions"-->
+        <!--                style="@style/BaseEditText"-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="@dimen/_16dp"-->
+        <!--                android:layout_marginTop="@dimen/_16dp"-->
+        <!--                android:layout_marginEnd="@dimen/_16dp"-->
+        <!--                android:gravity="start|top"-->
+        <!--                android:hint="@string/hint_instructions"-->
+        <!--                android:inputType="textMultiLine"-->
+        <!--                android:lines="4"-->
+        <!--                android:maxLength="1000"-->
+        <!--                android:maxLines="4"-->
+        <!--                android:visibility="gone"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@id/textViewLabelInstructions" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    </ScrollView>-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCheckout"
+        style="@style/BaseButton.Cart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8dp"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:drawableEnd="@drawable/ic_right"
+        android:drawablePadding="@dimen/_8dp"
+        android:paddingStart="@dimen/_8dp"
+        android:paddingEnd="@dimen/_16dp"
+        android:text="@string/text_place_order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintStart_toEndOf="@id/buttonBack"
+        app:layout_constraintVertical_bias="1"
+        app:layout_goneMarginTop="@dimen/_80dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonBack"
+        style="@style/BaseButton.Cart.Back"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_8dp"
+        android:drawableStart="@drawable/ic_left_blue"
+        android:paddingStart="@dimen/_16dp"
+        android:paddingEnd="@dimen/_8dp"
+        android:text="@string/text_back"
+        app:layout_constraintBottom_toBottomOf="@id/buttonCheckout"
+        app:layout_constraintEnd_toStartOf="@id/buttonCheckout"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/buttonCheckout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

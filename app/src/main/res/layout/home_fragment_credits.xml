@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelOptions"
+        style="@style/BaseTextView.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_left_blue"
+        android:drawablePadding="@dimen/_8dp"
+        android:drawableTint="@color/colorBlue"
+        android:gravity="center"
+        android:padding="@dimen/_16dp"
+        android:text="@string/menu_payment_options"
+        android:textColor="@color/colorTextBlue"
+        android:textSize="@dimen/_20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelCurrentBal"
+        style="@style/BaseTextView.ItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32dp"
+        android:text="@string/text_current_balance"
+        android:textColor="@color/colorTextGreyDark2"
+        android:textSize="@dimen/_18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelOptions" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCurrentBal"
+        style="@style/BaseTextView.ItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:textColor="@color/colorTextBlue"
+        android:textSize="@dimen/_40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelCurrentBal"
+        tools:text="@string/dummy_price" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonRecharge"
+        style="@style/BaseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_24dp"
+        android:text="@string/text_recharge"
+        android:lines="1"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="@id/textViewLabelCurrentBal"
+        app:layout_constraintStart_toStartOf="@id/textViewLabelCurrentBal"
+        app:layout_constraintTop_toBottomOf="@id/textViewCurrentBal"
+        app:layout_constraintVertical_bias="1" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewTransactions"
+        style="@style/BaseCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_24dp"
+        app:cardCornerRadius="@dimen/_16dp"
+        app:cardElevation="@dimen/_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonRecharge">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLabelHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16dp"
+                android:text="@string/text_transaction_history"
+                android:textColor="@color/colorTextGreyDark2"
+                android:textSize="@dimen/_18sp"
+                style="@style/BaseTextView.ItemName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/separator1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1dp"
+                android:layout_margin="@dimen/_16dp"
+                android:background="@color/colorSeparator2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelHistory" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTransactions"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator1"
+                tools:listitem="@layout/row_transaction" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNoDataFound"
+                style="@style/BaseTextView.ItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/label_data_not_found"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!--<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">18.184.119.36</domain>
+        <domain includeSubdomains="true">18.159.245.2</domain>
+        <domain includeSubdomains="true">192.168.1.130</domain>
+        <domain includeSubdomains="true">192.168.1.132</domain>
+        <domain includeSubdomains="true">192.168.1.134</domain>
+        <domain includeSubdomains="true"> 18.159.245.2</domain>
+        <domain includeSubdomains="true">  192.168.1.50</domain>
+
+    </domain-config>
+</network-security-config>-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

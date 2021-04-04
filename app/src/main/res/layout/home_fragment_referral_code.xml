@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewReferral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_referral" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewInfoReferral"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_24dp"
+        android:text="@string/text_referral_info"
+        android:textAlignment="center"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewReferral" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewReferralCode"
+        style="@style/BaseTextView.ItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32dp"
+        android:background="@drawable/bg_rounded_rect_border_6dp"
+        android:drawableEnd="@drawable/ic_copy"
+        android:drawablePadding="@dimen/_16dp"
+        android:paddingStart="@dimen/_24dp"
+        android:paddingTop="@dimen/_16dp"
+        android:paddingEnd="@dimen/_24dp"
+        android:paddingBottom="@dimen/_16dp"
+        android:text="@string/dummy_ref_code"
+        android:textAllCaps="true"
+        android:textColor="@color/colorTextBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewInfoReferral" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonShareCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_24dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_16dp"
+        android:fontFamily="@font/almarai_regular"
+        android:paddingTop="@dimen/_12dp"
+        android:paddingBottom="@dimen/_12dp"
+        android:stateListAnimator="@null"
+        android:text="@string/text_share_code"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_18sp"
+        app:cornerRadius="@dimen/_30dp"
+        app:icon="@drawable/ic_share"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

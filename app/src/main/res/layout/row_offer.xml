@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/BaseCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_16sp"
+    android:layout_marginTop="@dimen/_16sp"
+    android:layout_marginEnd="@dimen/_16dp"
+    app:cardCornerRadius="@dimen/_10dp"
+    app:cardElevation="@dimen/_16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--        TODO: Clip to outline-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewDriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16dp"
+            android:background="@drawable/bg_rounded_rect_8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_driver" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDriverName"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:text="@string/dummy_name"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintBottom_toTopOf="@id/ratingBarOffer"
+            app:layout_constraintStart_toEndOf="@id/imageViewDriver"
+            app:layout_constraintTop_toTopOf="@id/imageViewDriver" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBarOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:minHeight="0dp"
+            android:progressDrawable="@drawable/bg_rating_bar"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewDriver"
+            app:layout_constraintStart_toStartOf="@id/textViewDriverName"
+            app:layout_constraintTop_toBottomOf="@id/textViewDriverName" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewRating"
+            style="@style/BaseTextViewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/dummy_rating"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintBottom_toBottomOf="@id/ratingBarOffer"
+            app:layout_constraintStart_toEndOf="@id/ratingBarOffer"
+            app:layout_constraintTop_toTopOf="@id/ratingBarOffer" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDistance"
+            style="@style/BaseTextViewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_24dp"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:text="@string/dummy_distance_2"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintEnd_toStartOf="@id/textViewPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewDriver" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLabelAway"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:text="@string/text_away"
+            android:textColor="@color/colorSeparator"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintEnd_toEndOf="@id/textViewDistance"
+            app:layout_constraintStart_toStartOf="@id/textViewDistance"
+            app:layout_constraintTop_toBottomOf="@id/textViewDistance" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPriceStriked"
+            style="@style/BaseTextViewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_4dp"
+            android:text="@string/dummy_price_3"
+            app:fontFamily="@font/almarai_light"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@id/textViewPrice"
+            app:layout_constraintEnd_toEndOf="@id/textViewPrice"
+            app:layout_constraintStart_toStartOf="@id/textViewPrice" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPrice"
+            style="@style/BaseTextViewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:text="@string/dummy_price_3"
+            android:textColor="@color/colorTextBlue"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewDistance"
+            app:layout_constraintEnd_toStartOf="@id/textViewTime"
+            app:layout_constraintStart_toEndOf="@id/textViewDistance"
+            app:layout_constraintTop_toTopOf="@id/textViewDistance" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLabelCost"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:text="@string/text_cost"
+            android:textColor="@color/colorSeparator"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintEnd_toEndOf="@id/textViewPrice"
+            app:layout_constraintStart_toStartOf="@id/textViewPrice"
+            app:layout_constraintTop_toBottomOf="@id/textViewPrice" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTime"
+            style="@style/BaseTextViewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:text="@string/dummy_hour"
+            app:layout_constraintBottom_toBottomOf="@id/textViewPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textViewPrice"
+            app:layout_constraintTop_toTopOf="@id/textViewPrice" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLabelArrival"
+            style="@style/BaseTextView.ItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:text="@string/text_arrival_time"
+            android:textColor="@color/colorSeparator"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintEnd_toEndOf="@id/textViewTime"
+            app:layout_constraintStart_toStartOf="@id/textViewTime"
+            app:layout_constraintTop_toBottomOf="@id/textViewTime" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonAccept"
+            style="@style/BaseButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40dp"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_24dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:text="@string/text_accept"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/buttonReject"
+            app:layout_constraintTop_toBottomOf="@id/textViewLabelArrival" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonReject"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_24dp"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:background="@drawable/bg_rounded_rect_border_red_64dp"
+            android:text="@string/text_reject"
+            style="@style/BaseTextView.ItemName"
+            android:textAllCaps="false"
+            android:textColor="@color/colorStatusClosed"
+            android:textSize="@dimen/_18sp"
+            app:layout_constraintBottom_toBottomOf="@id/buttonAccept"
+            app:layout_constraintEnd_toStartOf="@id/buttonAccept"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/buttonAccept" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/recyclerViewPaymentMethods"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"/>-->
+    <!--    APPLE PAY-->
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/imageViewBgApplePay"-->
+    <!--        android:layout_width="@dimen/_160dp"-->
+    <!--        android:layout_height="@dimen/_120dp"-->
+    <!--        android:layout_marginTop="@dimen/_16dp"-->
+    <!--        android:background="@drawable/bg_rounded_rect_border_10dp"-->
+    <!--        android:backgroundTint="@color/colorBlue"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/imageViewBgStcPay"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/imageViewSelectedApplePay" />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/imageViewSelectedApplePay"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/imageViewBgApplePay"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/imageViewBgApplePay"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/imageViewBgApplePay"-->
+    <!--        app:srcCompat="@drawable/ic_selected_method" />-->
+
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/imageViewApplePay"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/imageViewBgApplePay"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/imageViewBgApplePay"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/imageViewBgApplePay"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/imageViewBgApplePay"-->
+    <!--        app:srcCompat="@drawable/ic_apple_pay_white" />-->
+
+    <!--    STC PAY-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBgMadaPay"
+        android:layout_width="@dimen/_160dp"
+        android:layout_height="@dimen/_120dp"
+        android:background="@drawable/bg_rounded_rect_border_10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewBgCreditCard"
+        app:layout_constraintTop_toTopOf="@id/imageViewBgCreditCard" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewSelectedMadaPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/imageViewBgMadaPay"
+        app:layout_constraintEnd_toEndOf="@id/imageViewBgMadaPay"
+        app:layout_constraintStart_toEndOf="@id/imageViewBgMadaPay"
+        app:layout_constraintTop_toTopOf="@id/imageViewBgMadaPay"
+        app:srcCompat="@drawable/ic_selected_method" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewMadaPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewBgMadaPay"
+        app:layout_constraintEnd_toEndOf="@id/imageViewBgMadaPay"
+        app:layout_constraintStart_toStartOf="@id/imageViewBgMadaPay"
+        app:layout_constraintTop_toTopOf="@id/imageViewBgMadaPay"
+        app:srcCompat="@drawable/mada_logo4" />
+
+    <!--    CREDIT CARD-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBgCreditCard"
+        android:layout_width="@dimen/_160dp"
+        android:layout_height="@dimen/_120dp"
+        android:layout_marginTop="@dimen/_16dp"
+        android:background="@drawable/bg_rounded_rect_border_10dp"
+        app:layout_constraintEnd_toStartOf="@id/imageViewBgMadaPay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageViewSelectedCreditCard" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewSelectedCreditCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/imageViewBgCreditCard"
+        app:layout_constraintEnd_toEndOf="@id/imageViewBgCreditCard"
+        app:layout_constraintStart_toEndOf="@id/imageViewBgCreditCard"
+        app:layout_constraintTop_toTopOf="@id/imageViewBgCreditCard"
+        app:srcCompat="@drawable/ic_selected_method" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewCreditCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/textViewCreditCard"
+        app:layout_constraintEnd_toEndOf="@id/imageViewBgCreditCard"
+        app:layout_constraintStart_toStartOf="@id/imageViewBgCreditCard"
+        app:layout_constraintTop_toTopOf="@id/imageViewBgCreditCard"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/ic_credit_card" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCreditCard"
+        style="@style/BaseTextView.ItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:text="@string/text_credit_card"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewBgCreditCard"
+        app:layout_constraintEnd_toEndOf="@id/imageViewBgCreditCard"
+        app:layout_constraintStart_toStartOf="@id/imageViewBgCreditCard"
+        app:layout_constraintTop_toBottomOf="@id/imageViewCreditCard" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

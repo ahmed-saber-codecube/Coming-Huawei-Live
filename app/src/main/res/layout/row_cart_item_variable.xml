@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_8dp"
+    android:layout_marginTop="@dimen/_16dp"
+    android:layout_marginEnd="@dimen/_8dp">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonMinus"
+        style="@style/ButtonMinus"
+        android:layout_width="@dimen/_30dp"
+        android:layout_height="@dimen/_30dp"
+        app:layout_constraintBottom_toBottomOf="@id/buttonPlus"
+        app:layout_constraintEnd_toStartOf="@id/textViewDishQuantity"
+        app:layout_constraintTop_toTopOf="@id/buttonPlus" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDishQuantity"
+        style="@style/BaseTextViewNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_10dp"
+        android:paddingEnd="@dimen/_10dp"
+        android:text="@string/dummy_quantity"
+        android:textColor="@color/colorTextGreyDark"
+        app:layout_constraintBottom_toBottomOf="@id/buttonPlus"
+        app:layout_constraintEnd_toStartOf="@id/buttonPlus"
+        app:layout_constraintTop_toTopOf="@id/buttonPlus" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonPlus"
+        style="@style/ButtonPlus"
+        android:layout_width="@dimen/_30dp"
+        android:layout_height="@dimen/_30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewQuantity"
+        style="@style/BaseTextViewNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_quantity_x"
+        android:layout_marginStart="@dimen/_8dp"
+        android:textColor="@color/colorTextGreyLight3"
+        app:layout_constraintBottom_toBottomOf="@id/textViewDishName"
+        app:layout_constraintStart_toEndOf="@+id/buttonDeleteAll"
+        app:layout_constraintTop_toTopOf="@id/textViewDishName" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDeleteAll"
+        style="@style/ButtonDeleteAll"
+        android:layout_width="@dimen/_30dp"
+        android:layout_height="@dimen/_30dp"
+        app:layout_constraintBottom_toBottomOf="@id/textViewQuantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textViewQuantity" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDishName"
+        style="@style/BaseTextView.ItemName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8dp"
+        android:text="@string/dummy_dish_name"
+        app:layout_constraintBottom_toBottomOf="@id/buttonMinus"
+        app:layout_constraintEnd_toStartOf="@id/buttonMinus"
+        app:layout_constraintStart_toEndOf="@id/textViewQuantity"
+        app:layout_constraintTop_toTopOf="@id/buttonMinus" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDishCustomization"
+        style="@style/BaseTextView.Desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:lineSpacingExtra="@dimen/_8dp"
+        android:text="@string/dummy_customization"
+        android:textColor="@color/colorTextGreyLight3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMinus"
+        app:layout_constraintStart_toStartOf="@id/textViewDishName"
+        app:layout_constraintTop_toBottomOf="@id/textViewDishName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDishPrice"
+        style="@style/BaseTextView.ItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/dummy_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlus" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorTextGreyLight3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

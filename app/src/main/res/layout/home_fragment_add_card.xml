@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelCards"
+        style="@style/BaseTextView.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_left_blue"
+        android:drawablePadding="@dimen/_8dp"
+        android:drawableTint="@color/colorBlue"
+        android:gravity="center"
+        android:padding="@dimen/_16dp"
+        android:text="@string/text_credit_cards"
+        android:textColor="@color/colorTextBlue"
+        android:textSize="@dimen/_20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelName"
+        style="@style/BaseTextView.Title.Sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_24dp"
+        android:text="@string/text_card_holder_small"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelCards" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextName"
+        style="@style/BaseEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+        android:hint="@string/dummy_name_2"
+        android:imeOptions="actionNext"
+        android:maxLength="15"
+        android:paddingTop="@dimen/_12dp"
+        android:paddingBottom="@dimen/_12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textViewLabelName"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelCardNumber"
+        style="@style/BaseTextView.Title.Sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_24dp"
+        android:text="@string/text_card_number"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextName" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextCardNumber"
+        style="@style/BaseEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:drawableEnd="@drawable/img_visa_logo"
+        android:hint="@string/hint_card_number"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:maxLength="16"
+        android:paddingStart="@dimen/_24dp"
+        android:paddingTop="@dimen/_4dp"
+        android:paddingEnd="@dimen/_24dp"
+        android:paddingBottom="@dimen/_4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textViewLabelCardNumber"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelCardNumber" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelExpiry"
+        style="@style/BaseTextView.Title.Sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_24dp"
+        android:text="@string/text_expiry_date"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextCardNumber" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextExpiryDate"
+        style="@style/BaseEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:enabled="true"
+        android:focusable="false"
+        android:hint="@string/hint_expiry"
+        android:paddingTop="@dimen/_12dp"
+        android:paddingBottom="@dimen/_12dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/editTextCvv"
+        app:layout_constraintStart_toStartOf="@id/textViewLabelExpiry"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelExpiry" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelCvv"
+        style="@style/BaseTextView.Title.Sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16dp"
+        android:text="@string/text_cvv"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintBottom_toTopOf="@id/editTextCvv"
+        app:layout_constraintStart_toStartOf="@id/editTextCvv" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextCvv"
+        style="@style/BaseEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:hint="@string/hint_cvv"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:maxLength="3"
+        android:paddingTop="@dimen/_12dp"
+        android:paddingBottom="@dimen/_12dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/editTextExpiryDate"
+        app:layout_constraintTop_toBottomOf="@id/textViewLabelExpiry" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSave"
+        style="@style/BaseButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_64dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_16dp"
+        android:text="@string/text_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextExpiryDate"
+        app:layout_constraintVertical_bias="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

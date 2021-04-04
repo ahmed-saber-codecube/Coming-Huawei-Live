@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/additionTittle"
+        style="@style/BaseTextView.Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/label_tomatoes"
+        app:layout_constraintEnd_toStartOf="@+id/textViewLabelUpto"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabelUpto"
+        style="@style/BaseTextView.ItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:background="@drawable/bg_rounded_rect_4dp"
+        android:backgroundTint="@color/colorExtraLimit"
+        android:paddingStart="@dimen/_8dp"
+        android:paddingTop="@dimen/_4dp"
+        android:paddingEnd="@dimen/_8dp"
+        android:paddingBottom="@dimen/_4dp"
+        android:text="@string/text_up_to_optional"
+        android:textSize="@dimen/_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/additionTittle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/additionTittle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAdditionItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/additionTittle"
+        app:layout_constraintTop_toBottomOf="@+id/additionTittle"
+        tools:itemCount="4"
+        tools:listitem="@layout/row_dish_addon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#038DFE</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="colorBlue">#038DFE</color>
+
+    <color name="colorTransferant">#00FFFFFF</color>
+
+    <color name="colorBgEditText">#E9EFF1</color>
+    <color name="colorBgButtonEnabled">#038DFE</color>
+    <color name="colorBgButtonDisabled">#ECECEC</color>
+    <color name="colorButtonTextDisabled">#B4B4B4</color>
+    <color name="colorButtonTextEnabled">#FFFFFF</color>
+
+    <color name="colorGrey5">#B7ABAB</color>
+    <color name="colorTextHint">#839195</color>
+
+    <color name="colorTextWhite">#FFFFFF</color>
+    <color name="colorTextBlue">#038DFE</color>
+    <color name="colorTextGreyDark">#353535</color>
+    <color name="colorTextGreyDark2">#4A4A4A</color>
+
+    <color name="colorTextGreyLight">#999999</color>
+    <color name="colorTextGreyLight2">#707070</color>
+    <color name="colorTextGreyLight3">#9E9E9E</color>
+
+    <color name="colorTextEditText">#353535</color>
+
+    <!--    Login-->
+    <color name="colorSeparator">#C4C4C4</color>
+
+
+    <!--    Home-->
+    <color name="colorBgHome">#F8F8F8</color>
+    <color name="colorTextInactive">#A4A4A4</color>
+    <color name="colorChipInactive">#4A4A4A</color>
+
+    <color name="colorTypePersonalShopper">#FED843</color>
+    <color name="colorTypeGrocery">#EEC07B</color>
+    <color name="colorTypeRestaurant">#FF546E</color>
+    <color name="colorTypeHealth">#57E995</color>
+    <color name="colorTypeGrill">#E5E5E5</color>
+    <color name="colorTypeCofee">#A27250</color>
+
+
+    <color name="colorStatusOpen">#2ECC71</color>
+    <color name="colorStatusBusy">#F1C40F</color>
+    <color name="colorStatusClosed">#E74C3C</color>
+
+    <!--    Restaurant Page-->
+    <color name="colorBgRestaurantPage">#E5E5E5</color>
+
+    <!--    Add Dish Page-->
+    <color name="colorExtraLimit">#33038DFE</color>
+
+    <color name="colorDecrementEnabled">#FF1F3E</color>
+    <color name="colorQuantityDisabled">#A4A4A4</color>
+
+    <!--    Cart-->
+    <color name="colorTotal">#2ECC71</color>
+
+    <!--    Checkout-->
+    <color name="colorPaymentMethodBorder">#C4C4C4</color>
+
+    <!--    Waiting Page-->
+    <color name="colorCheckboxStatusUnchecked">#C8C8C8</color>
+    <color name="colorCheckboxStatusChecked">#038DFE</color>
+    <color name="colorBgWaitingPage">#E5E5E5</color>
+
+    <!--    Payment Methods-->
+    <color name="colorSeparator2">#DBDBDB</color>
+
+    <!--    Credit Cards-->
+    <color name="colorLabels">#D3DDE5</color>
+    <color name="colorRemove">#FF1F3E</color>
+
+    <color name="colorTransactionDebit">#E74C3C</color>
+    <color name="colorTransactionCredit">#2ECC71</color>
+
+    <!--    Chat-->
+    <color name="colorBgMessage">#EBEFF0</color>
+    <color name="ColorOutOfStock">#B8001C</color> <!--#B8001C-->
+
+</resources>

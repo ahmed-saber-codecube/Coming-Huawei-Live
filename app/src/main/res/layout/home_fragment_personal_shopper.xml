@@ -1,0 +1,142 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewPersonalShopper"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_personal_shopper" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:background="@drawable/ic_close"
+            app:layout_constraintStart_toStartOf="@id/imageViewPersonalShopper"
+            app:layout_constraintTop_toTopOf="@id/imageViewPersonalShopper" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLabelStoreName"
+            style="@style/BaseTextView.Title.Sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:drawableStart="@drawable/ic_store_name"
+            android:text="@string/text_store_name"
+            app:layout_constraintStart_toStartOf="@id/imageViewPersonalShopper"
+            app:layout_constraintTop_toBottomOf="@id/imageViewPersonalShopper" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextStoreName"
+            style="@style/BaseEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:hint="@string/hint_type_store_name"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/imageViewPersonalShopper"
+            app:layout_constraintStart_toStartOf="@id/textViewLabelStoreName"
+            app:layout_constraintTop_toBottomOf="@id/textViewLabelStoreName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLabelDelieveryAddressName"
+            style="@style/BaseTextView.Title.Sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:drawableStart="@drawable/ic_store_name"
+            android:text="@string/text_delivery_address"
+            app:layout_constraintStart_toStartOf="@id/editTextStoreName"
+            app:layout_constraintTop_toBottomOf="@id/editTextStoreName" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextDeliveryAddress"
+            style="@style/BaseEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:hint="@string/hint_type_delivery_address"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@id/imageViewPersonalShopper"
+            app:layout_constraintStart_toStartOf="@id/textViewLabelDelieveryAddressName"
+            app:layout_constraintTop_toBottomOf="@id/textViewLabelDelieveryAddressName" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLabelOrderDetails"
+            style="@style/BaseTextView.Title.Sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:drawableStart="@drawable/ic_order_detail"
+            android:text="@string/text_order_details"
+            app:layout_constraintStart_toStartOf="@id/imageViewPersonalShopper"
+            app:layout_constraintTop_toBottomOf="@id/editTextDeliveryAddress" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextOrderDetails"
+            style="@style/BaseEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:gravity="start|top"
+            android:hint="@string/hint_order_detail"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:maxLength="1000"
+            android:maxLines="4"
+            app:layout_constraintEnd_toEndOf="@id/imageViewPersonalShopper"
+            app:layout_constraintStart_toStartOf="@id/textViewLabelOrderDetails"
+            app:layout_constraintTop_toBottomOf="@id/textViewLabelOrderDetails" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPickLocation"
+            style="@style/BaseTextView.Title.Sub"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            android:drawableStart="@drawable/ic_location"
+            android:drawableTint="@color/colorBlue"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="3"
+            android:paddingBottom="@dimen/_8dp"
+            android:text="@string/text_pick_store_location"
+            android:textColor="@color/colorTextBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/editTextOrderDetails"
+            app:layout_constraintTop_toBottomOf="@id/editTextOrderDetails" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonOrder"
+            style="@style/BaseButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_40dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:text="@string/label_order"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewPickLocation"
+            app:layout_constraintVertical_bias="1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
