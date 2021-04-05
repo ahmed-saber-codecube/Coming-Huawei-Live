@@ -6,7 +6,6 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationListener
@@ -15,13 +14,16 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.annotation.NonNull
+import com.coming.customer.BuildConfig
 import com.coming.customer.R
 import com.coming.customer.core.AppCommon
 import com.coming.customer.core.AppPreferences
 import com.coming.customer.ui.base.BaseFragment
 import com.coming.customer.ui.isolated.IsolatedActivity
 import com.google.android.libraries.places.api.net.PlacesClient
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.huawei.hms.api.ConnectionResult
 import com.huawei.hms.api.HuaweiApiClient
 import com.huawei.hms.location.*
@@ -30,12 +32,15 @@ import com.huawei.hms.support.api.client.ResultCallback
 import com.huawei.hms.support.api.client.Status
 import com.huawei.hms.maps.CameraUpdateFactory
 import com.huawei.hms.maps.HuaweiMap
-import com.huawei.hms.maps.HuaweiMap.OnCameraIdleListener
+import com.huawei.hms.site.widget.SearchFragment
 import com.huawei.hms.maps.OnMapReadyCallback
 import com.huawei.hms.maps.SupportMapFragment
 import com.huawei.hms.maps.model.BitmapDescriptorFactory
 import com.huawei.hms.maps.model.LatLng
 import com.huawei.hms.maps.model.MarkerOptions
+import com.huawei.hms.site.api.model.SearchStatus
+import com.huawei.hms.site.api.model.Site
+import com.huawei.hms.site.widget.SiteSelectionListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.home_fragment_location.*
 import javax.inject.Inject
@@ -49,7 +54,7 @@ open class PickLocationFragment : BaseFragment(), View.OnClickListener, OnMapRea
         private const val RC_LOCATION_PERMISSION = 1234
     }
 
-    lateinit var mGoogleApiClient: HuaweiApiClient
+    lateinit var huaweiApiClient: HuaweiApiClient
     private lateinit var locationRequest: LocationRequest
     var REQUEST_CHECK_SETTINGS = 100
 
@@ -189,13 +194,14 @@ open class PickLocationFragment : BaseFragment(), View.OnClickListener, OnMapRea
     override fun onProviderDisabled(provider: String?) {
     }
 
-    override fun onConnected(p0: Bundle?) {
-        val builder: LocationSettingsRequest.Builder = LocationSettingsRequest.Builder()
-            .addLocationRequest(locationRequest)
-        builder.setAlwaysShow(true)
-
-        val result: PendingResult<LocationSettingsResult> = LocationServices.getSettingsClient(context).checkLocationSettings(mGoogleApiClient, builder.build())
-        result.setResultCallback(this)
+    override fun onConnected() {
+        //TODO:to be implemented
+//        val builder: LocationSettingsRequest.Builder = LocationSettingsRequest.Builder()
+//            .addLocationRequest(locationRequest)
+//        builder.setAlwaysShow(true)
+//
+//        val result: PendingResult<LocationSettingsResult> = LocationServices.getSettingsClient(context).checkLocationSettings(huaweiApiClient, builder.build())
+//        result.setResultCallback(this)
     }
 
     override fun onConnectionSuspended(p0: Int) {
@@ -273,34 +279,23 @@ open class PickLocationFragment : BaseFragment(), View.OnClickListener, OnMapRea
     }
 
     private fun doAutoSearchPlaces() {
-        // Setup Places Client
-        if (!Places.isInitialized()) {
-            Places.initialize(
-                requireActivity().applicationContext,
-                resources.getString(R.string.google_maps_api_key)
-            )
-        }
-        //Search Places auto complete
-        placesClient = Places.createClient(requireActivity())
-        placeAutoComplete =
-            childFragmentManager.findFragmentById(R.id.pick_location_place_autocomplete) as AutocompleteSupportFragment?
-        placeAutoComplete?.setPlaceFields(
-            listOf(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG, Place.Field.ADDRESS)
-        )
-        placeAutoComplete?.view?.setBackgroundColor(Color.WHITE)
-        placeAutoComplete?.setOnPlaceSelectedListener(
-            object : PlaceSelectionListener {
-                override fun onPlaceSelected(place: Place) {
-                    viewedAddress = place.address.toString()
-                    centerCamera(place.latLng!!, 16f)
-                    // showMessage("" + place.latLng?.latitude + "" + place.latLng?.longitude + "")
+        val fragment: SearchFragment = childFragmentManager.findFragmentById(R.id.pick_location_place_autocomplete) as SearchFragment
+        // Set the API key of SearchFragment.
+        fragment.setApiKey(BuildConfig.HUAWEI_API_KEY)
+        fragment.setOnSiteSelectedListener(object : SiteSelectionListener {
+            override fun onSiteSelected(site: Site) {
+                site.run{
+                    viewedAddress = address.toString()
+                    centerCamera(locationLatLng = LatLng(location.lat, location.lng), 16f)
                 }
-
-                override fun onError(status: Status) {
-//                    if (status.isCanceled||status.statusMessage == null)
-//                        Log.e("autocomplete", status.statusMessage)
-                }
-            })
+            }
+            override fun onError(status: SearchStatus) {
+                Toast
+                    .makeText(this@PickLocationFragment.requireContext(), status.getErrorCode() + "\n" + status.getErrorMessage(),
+                        Toast.LENGTH_LONG)
+                    .show()
+            }
+        })
     }
 
     private fun getCurrentLocation() {
